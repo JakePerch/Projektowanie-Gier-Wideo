@@ -1,0 +1,15 @@
+Tytuł: Congrats! It's a Forest Fire!
+
+Styl: low poly, kreskówkowy, post-apo + komedia.
+
+Setup: Gracz zaczyna jako uciekający z gender reveal party everyman z gaśnicą-karabinem maszynowym.
+
+Dynamiki:
+- gaszenie przejść z ograniczoną amunicją do gaśnicy
+- przeskakiwanie przez dziury i ściany ognia
+- szybkie reagowanie na random eventy (np. spadające drzewa)
+- opcjonalne ratowanie zwierzątek w bocznych przejściach
+
+Progres: czas rzeczywisty, kolejne levele.
+
+Cel i zwycięstwo: dotarcie do Walmartu bez spłonięcia po drodze.
