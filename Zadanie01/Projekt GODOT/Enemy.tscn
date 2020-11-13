@@ -68,4 +68,8 @@ shape = SubResource( 8 )
 
 [node name="ShotTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="RemovalTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="timeout" from="ShotTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="RemovalTimer" to="." method="_on_RemovalTimer_timeout"]

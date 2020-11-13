@@ -19,6 +19,7 @@ autostart = true
 [node name="ScoreTimer" type="Timer" parent="."]
 autostart = true
 [connection signal="hit_by_projectile" from="Player" to="." method="_on_Player_hit_by_projectile"]
+[connection signal="killed_enemy" from="Player" to="." method="_on_Player_killed_enemy"]
 [connection signal="buttonPressed" from="HUD" to="." method="_on_HUD_buttonPressed"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

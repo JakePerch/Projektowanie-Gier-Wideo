@@ -2,6 +2,7 @@ extends Area2D
 
 signal attacked
 signal hit_by_projectile
+signal killed_enemy
 
 var canAttack = false
 var target
@@ -30,9 +31,19 @@ func TeleportToMouse():
 
 func Attack():
 	if canAttack:
-		pass
+		target = $Katana.GetTarget()
+		target.Die()
+		emit_signal("killed_enemy")
+		canAttack = false
 
 
 func _on_Player_body_entered(body):
 	emit_signal("hit_by_projectile")
-	print("ok")
+
+
+func _on_Katana_canAttack():
+	canAttack = true
+
+
+func _on_Katana_cantAttack():
+	canAttack = false

@@ -1,10 +1,14 @@
 extends Node
 
-var timeBetweenEnemies = 1 as float
+var defaultTimeBetweenEnemies = 2 as float
+var timeBetweenEnemies = 2 as float
+var timeBetweenEnemiesDecrease = 0.1 as float
+var minimumTimeBetweenEnemies = 0.1 as float
 var safeZoneRadius = 300
 var startingLifes = 4
 var lifes = 2
 var score = 0
+var scoreForKillingEnemy = 10
 var gameInProgress = true;
 
 var enemyScene
@@ -14,8 +18,8 @@ var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enemyScene = load("res://Enemy.tscn")
-	
 	$EnemyTimer.set_wait_time(timeBetweenEnemies)
+	GameOver() #potem zmeinic!
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,6 +55,8 @@ func InstantiateEnemy():
 func _on_EnemyTimer_timeout():
 	if gameInProgress:
 		InstantiateEnemy()
+		if timeBetweenEnemies - timeBetweenEnemiesDecrease > minimumTimeBetweenEnemies:
+			timeBetweenEnemies = timeBetweenEnemies - timeBetweenEnemiesDecrease
 
 	
 func GameOver():
@@ -75,6 +81,7 @@ func SetUpNewGame():
 	score = 0
 	$HUD.GameOverLabelActive(false)
 	$Player.show()
+	timeBetweenEnemies = defaultTimeBetweenEnemies
 	$EnemyTimer.start()
 	gameInProgress = true
 
@@ -94,3 +101,7 @@ func _on_Player_hit_by_projectile():
 	if lifes < 1:
 		UpdateLabels()
 		GameOver()
+
+
+func _on_Player_killed_enemy():
+	score = score + scoreForKillingEnemy

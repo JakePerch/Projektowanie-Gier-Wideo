@@ -1,14 +1,19 @@
 extends Area2D
 
+signal canAttack
+signal cantAttack
 
 var enemyInRange = false
 var enemy
 
 
 func _on_Katana_area_entered(area):
-	print ("in")
-	
+	emit_signal("canAttack")
+	enemy = area
 	
 
 func _on_Katana_area_exited(area):
-	print("out")
+	emit_signal("cantAttack")
+
+func GetTarget():
+	return enemy
