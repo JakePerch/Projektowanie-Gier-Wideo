@@ -17,8 +17,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 26.4709
-height = 24.9565
+radius = 20.4849
+height = 0.0
 
 [node name="Projectile" type="RigidBody2D"]
 collision_mask = 0
@@ -27,9 +27,11 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.235962, -0.943878 )
+z_index = 1
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 18.2757, 0.26487 )
 rotation = 1.5708
 shape = SubResource( 3 )
 

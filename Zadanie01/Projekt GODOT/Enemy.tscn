@@ -59,7 +59,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
-z_index = 1
+z_index = 2
 frames = SubResource( 7 )
 animation = "idle"
 

@@ -8,12 +8,13 @@ var enemy
 
 
 func _on_Katana_area_entered(area):
-	emit_signal("canAttack")
-	enemy = area
-	
+	if area.get_name() != "Player":
+		enemy = area
+		emit_signal("canAttack")
 
 func _on_Katana_area_exited(area):
-	emit_signal("cantAttack")
+	if area.get_name() != "Player":
+		emit_signal("cantAttack")
 
 func GetTarget():
 	return enemy

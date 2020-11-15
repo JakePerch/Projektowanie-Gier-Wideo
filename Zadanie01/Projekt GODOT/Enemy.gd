@@ -33,6 +33,7 @@ func Die():
 	$ShotTimer.stop()
 	$AnimatedSprite.play("die")
 	$RemovalTimer.start()
+	$AnimatedSprite.set_z_index(0)
 
 
 func _on_RemovalTimer_timeout():
