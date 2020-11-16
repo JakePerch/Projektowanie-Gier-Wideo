@@ -4,7 +4,7 @@ var shotFrequency = 3 as float
 var shotSpeed = 500
 var projectileScene
 var alive = true
-var timeForBodyRemoval = 7 as float
+var timeForBodyRemoval = 10 as float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +32,7 @@ func Die():
 	get_node("CollisionShape2D").disabled = true
 	$ShotTimer.stop()
 	$AnimatedSprite.play("die")
+	$DeathSound.play()
 	$RemovalTimer.start()
 	$AnimatedSprite.set_z_index(0)
 

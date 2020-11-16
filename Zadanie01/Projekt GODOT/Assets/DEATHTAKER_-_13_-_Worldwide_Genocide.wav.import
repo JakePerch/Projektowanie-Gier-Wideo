@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DEATHTAKER_-_13_-_Worldwide_Genocide.wav-9bdcf490b3ecc7d64cee1223a9f6d490.sample"
+
+[deps]
+
+source_file="res://Assets/DEATHTAKER_-_13_-_Worldwide_Genocide.wav"
+dest_files=[ "res://.import/DEATHTAKER_-_13_-_Worldwide_Genocide.wav-9bdcf490b3ecc7d64cee1223a9f6d490.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

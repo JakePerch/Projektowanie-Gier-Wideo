@@ -1,17 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/heavycopper.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD.gd" type="Script" id=2]
+[ext_resource path="res://Assets/DEATHTAKER_-_13_-_Worldwide_Genocide.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Damnation_Reign_-_15_-_Shadow_of_a_Dark_Queen.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -67,10 +75,10 @@ __meta__ = {
 }
 
 [node name="Instructions" type="Label" parent="."]
-margin_left = 319.027
-margin_top = 326.368
-margin_right = 964.027
-margin_bottom = 515.368
+margin_left = 306.299
+margin_top = 324.954
+margin_right = 951.299
+margin_bottom = 513.954
 custom_fonts/font = SubResource( 3 )
 text = "Sterowanie:
 PPM - teleportacja
@@ -106,5 +114,13 @@ text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 [connection signal="pressed" from="TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
 [connection signal="pressed" from="NewGameButton" to="." method="_on_NewGameButton_pressed"]

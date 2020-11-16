@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Damnation_Reign_-_15_-_Shadow_of_a_Dark_Queen.wav-680f361c7d08f1fc41c7abc4e50ce515.sample"
+
+[deps]
+
+source_file="res://Assets/Damnation_Reign_-_15_-_Shadow_of_a_Dark_Queen.wav"
+dest_files=[ "res://.import/Damnation_Reign_-_15_-_Shadow_of_a_Dark_Queen.wav-680f361c7d08f1fc41c7abc4e50ce515.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,7 +1,7 @@
 extends Node
 
-var defaultTimeBetweenEnemies = 1.5 as float
-var timeBetweenEnemies = 1.5 as float
+var defaultTimeBetweenEnemies = 1.2 as float
+var timeBetweenEnemies = 1.2 as float
 var timeBetweenEnemiesDecrease = 0.1 as float
 var minimumTimeBetweenEnemies = 0.3 as float
 var safeZoneRadius = 300
@@ -88,14 +88,19 @@ func SetUpNewGame():
 	$Player.show()
 	$Player.Active(true)
 	$EnemyTimer.start()
+	$HUD/MenuMusic.stop()
+	$HUD/GameMusic.play()
 	
 func GameOver():
 	gameInProgress = false
+	$Player/DeathSound.play()
 	$Player.hide()
 	$Player.Active(false)
 	$EnemyTimer.stop()
 	$HUD.GameOverLabelActive(true)
 	DestroyAllEnemies()
+	$HUD/GameMusic.stop()
+	$HUD/MenuMusic.play()
 	
 
 func DestroyAllEnemies():

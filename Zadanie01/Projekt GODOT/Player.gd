@@ -4,6 +4,7 @@ signal hit_by_projectile
 signal killed_enemy
 
 var attackEffectTime = 0.1 as float
+var hitEffectTime = 0.1 as float
 
 var canAttack = false
 var target
@@ -15,6 +16,7 @@ var attackReady = false
 func _ready():
 	enemyScene = load("res://Enemy.tscn")
 	$AttackEffectTimer.set_wait_time(attackEffectTime)
+	$HitEffectTimer.set_wait_time(hitEffectTime)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -41,6 +43,7 @@ func Attack():
 	if attackReady:
 		$Sprite/AttackEffect.show()
 		$AttackEffectTimer.start()
+		$KatanaSound.play()
 		attackReady = false
 		if canAttack:
 			target.Die()
@@ -49,22 +52,29 @@ func Attack():
 			attackReady = false
 		
 
-
 func _on_Player_body_entered(body):
-	emit_signal("hit_by_projectile")
+	if body.get_name() == "Projectile":
+		emit_signal("hit_by_projectile")
+		body.Destroy()
+		$HurtSound.play()
+		hide()
+		$HitEffectTimer.start()
 
 
 func _on_Katana_canAttack():
 	target = $Katana.GetTarget()
 	canAttack = true
 
-
 func _on_Katana_cantAttack():
 	canAttack = false
+
 
 func Active(value):
 	active = value
 
-
+#Hack zamiast robienia animacji
 func _on_AttackEffectTimer_timeout():
 	$Sprite/AttackEffect.hide()
+
+func _on_HitEffectTimer_timeout():
+	show()

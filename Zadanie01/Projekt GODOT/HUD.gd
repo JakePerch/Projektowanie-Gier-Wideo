@@ -29,6 +29,7 @@ func GameStart():
 	$"Life Label".show()
 	$"Score Label".show()
 	$NewGameButton.queue_free()
+	$MenuMusic.stop()
 
 
 func _on_TryAgainButton_pressed():

@@ -24,3 +24,5 @@ func SetSpeed(speed):
 func _on_Projectile_body_entered(body):
 	print("projectile hit sth")
 
+func Destroy():
+	get_parent().remove_child(self)
