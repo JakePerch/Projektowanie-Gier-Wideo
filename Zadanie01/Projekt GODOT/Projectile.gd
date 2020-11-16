@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var projectileSpeed = 1000
-var timeToDestroy = 10 as float
+var timeToDestroy = 15 as float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
