@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/menu_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Fonts/menu_font_elements.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Scenes/NewGameButton.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Themes/ButtonTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Scenes/QuitButton.gd" type="Script" id=5]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -52,13 +53,14 @@ custom_fonts/font = ExtResource( 2 )
 text = "New game"
 script = ExtResource( 3 )
 
-[node name="OptionsButton" type="Button" parent="MenuMargins/HBoxContainer/VBoxContainer/MenuOptions"]
+[node name="QuitButton" type="Button" parent="MenuMargins/HBoxContainer/VBoxContainer/MenuOptions"]
 margin_top = 319.0
 margin_right = 256.0
 margin_bottom = 362.0
 theme = ExtResource( 4 )
 custom_fonts/font = ExtResource( 2 )
-text = "Options"
+text = "Quit"
+script = ExtResource( 5 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MenuMargins/HBoxContainer"]
 margin_left = 260.0
@@ -77,3 +79,4 @@ text = "Guess the Number"
 align = 1
 valign = 1
 [connection signal="pressed" from="MenuMargins/HBoxContainer/VBoxContainer/MenuOptions/NewGameButton" to="MenuMargins/HBoxContainer/VBoxContainer/MenuOptions/NewGameButton" method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="MenuMargins/HBoxContainer/VBoxContainer/MenuOptions/QuitButton" to="MenuMargins/HBoxContainer/VBoxContainer/MenuOptions/QuitButton" method="_on_QuitButton_pressed"]
