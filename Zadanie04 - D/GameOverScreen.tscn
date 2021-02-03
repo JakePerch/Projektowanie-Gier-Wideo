@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Styles/background.tres" type="StyleBox" id=1]
+[ext_resource path="res://Fonts/elementfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GameOverScreen.gd" type="Script" id=3]
+
+[node name="GameOverScreen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="PanelContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_constants/margin_right = 400
+custom_constants/margin_top = 100
+custom_constants/margin_left = 400
+custom_constants/margin_bottom = 500
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+margin_left = 400.0
+margin_top = 100.0
+margin_right = 1520.0
+margin_bottom = 580.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="gameOverLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 85.0
+margin_right = 1120.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.666667, 0.741176, 1 )
+text = "aaaa"
+align = 1
+autowrap = true
+
+[node name="startFromLastButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 201.0
+margin_right = 1120.0
+margin_bottom = 273.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.666667, 0.741176, 1 )
+custom_colors/font_color_hover = Color( 0.45098, 0.462745, 0.529412, 1 )
+custom_colors/font_color_pressed = Color( 0.45098, 0.462745, 0.529412, 1 )
+text = "Start from the last level"
+flat = true
+
+[node name="backToMenuButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 323.0
+margin_right = 1120.0
+margin_bottom = 395.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.666667, 0.741176, 1 )
+custom_colors/font_color_hover = Color( 0.45098, 0.462745, 0.529412, 1 )
+custom_colors/font_color_pressed = Color( 0.45098, 0.462745, 0.529412, 1 )
+text = "Quit to menu"
+flat = true
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/startFromLastButton" to="." method="_on_startFromLastButton_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/backToMenuButton" to="." method="_on_backToMenuButton_pressed"]
